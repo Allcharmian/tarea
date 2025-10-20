@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía: Teorías del Aprendizaje - Vygotsky y Ausubel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .flow-arrow {
+            font-size: 2rem;
+            color: #ff7c43;
+            line-height: 1;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <header class="bg-[#003f5c] text-white p-8 text-center shadow-lg">
+        <h1 class="text-4xl md:text-5xl font-bold mb-2">Teorías Fundamentales del Aprendizaje</h1>
+        <p class="text-lg md:text-xl text-gray-300">Un Análisis Visual de Vygotsky y Ausubel</p>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8">
+        
+        <section id="intro" class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-[#003f5c] mb-4">Estructura, Interacción y Significado</h2>
+            <p class="max-w-3xl mx-auto text-lg text-gray-600">
+                Exploramos dos de las teorías más influyentes en la psicología educativa. Mientras Lev Vygotsky nos muestra cómo la interacción social construye nuestra mente, David Ausubel revela cómo el conocimiento previo da forma y ancla el nuevo aprendizaje.
+            </p>
+        </section>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <section id="vygotsky" class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-shadow duration-300">
+                <h3 class="text-2xl font-bold text-[#4d80a1] mb-4">El Arquitecto Social: Lev Vygotsky</h3>
+                <p class="mb-6 text-gray-600">La teoría histórico-cultural de Vygotsky postula que el desarrollo cognitivo es inseparable del contexto social y cultural. Aprendemos a través de la interacción y la mediación de herramientas culturales, como el lenguaje.</p>
+                
+                <div class="bg-gray-50 rounded-lg p-4 mb-6">
+                    <h4 class="font-bold text-lg mb-2">Zona de Desarrollo Próximo (ZDP)</h4>
+                    <p class="text-sm text-gray-600 mb-4">La ZDP es el espacio vital donde ocurre el aprendizaje. Representa lo que un individuo puede lograr con la guía y colaboración de otros, más allá de lo que podría hacer de forma autónoma.</p>
+                    <div class="chart-container h-64 md:h-72">
+                        <canvas id="zdpChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-lg p-4">
+                    <h4 class="font-bold text-lg mb-2">El Poder de la Mediación</h4>
+                    <p class="text-sm text-gray-600 mb-4">El aprendizaje es una internalización progresiva de herramientas. El lenguaje es el instrumento mediador por excelencia que transforma nuestras capacidades mentales.</p>
+                     <div class="flex flex-col md:flex-row items-center justify-around text-center p-4 space-y-4 md:space-y-0 md:space-x-4">
+                        <div class="p-3 bg-blue-100 rounded-lg">
+                            <p class="font-semibold">🤝 Interacción Social</p>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="p-3 bg-orange-100 rounded-lg">
+                            <p class="font-semibold">🗣️ Lenguaje y Herramientas</p>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                         <div class="p-3 bg-teal-100 rounded-lg">
+                            <p class="font-semibold">🧠 Funciones Superiores</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="ausubel" class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-shadow duration-300">
+                <h3 class="text-2xl font-bold text-[#ff7c43] mb-4">El Constructor Cognitivo: David Ausubel</h3>
+                <p class="mb-6 text-gray-600">La teoría de la asimilación de Ausubel se centra en cómo el nuevo conocimiento adquiere significado al relacionarse de forma sustancial y no arbitraria con la estructura cognitiva previa del estudiante.</p>
+
+                <div class="bg-gray-50 rounded-lg p-4 mb-6">
+                    <h4 class="font-bold text-lg mb-2">Aprendizaje Significativo vs. Mecánico</h4>
+                    <p class="text-sm text-gray-600 mb-4">Ausubel diferencia claramente entre el aprendizaje que se integra y se comprende (significativo) y el que simplemente se memoriza sin conexión (mecánico). El objetivo es lograr un conocimiento duradero y transferible.</p>
+                    <div class="chart-container h-64 md:h-72">
+                        <canvas id="learningComparisonChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-lg p-4">
+                     <h4 class="font-bold text-lg mb-2">El Proceso de Asimilación</h4>
+                    <p class="text-sm text-gray-600 mb-4">El aprendizaje significativo se facilita con "organizadores previos" que activan el conocimiento existente, permitiendo que la nueva información se ancle a conceptos ya establecidos (subsumsores).</p>
+                    <div class="flex flex-col md:flex-row items-center justify-around text-center p-4 space-y-4 md:space-y-0 md:space-x-4">
+                        <div class="p-3 bg-orange-100 rounded-lg">
+                            <p class="font-semibold">🌉 Organizadores Previos</p>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="p-3 bg-blue-100 rounded-lg">
+                            <p class="font-semibold">📚 Estructura Cognitiva</p>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                         <div class="p-3 bg-teal-100 rounded-lg">
+                            <p class="font-semibold">💡 Aprendizaje Significativo</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <section id="application" class="mt-12">
+            <h2 class="text-3xl font-bold text-center text-[#003f5c] mb-8">Reflexión y Vigencia en el Mundo Real</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h4 class="font-bold text-xl mb-3 text-[#4d80a1]">Vigencia de Vygotsky</h4>
+                    <p class="text-gray-600 mb-1 font-semibold">Imprescindible para la Inclusión y Colaboración.</p>
+                    <p class="text-gray-600">Su énfasis en el contexto social es crucial para el diseño de estrategias de andamiaje y tutoría entre pares, abordando las problemáticas educativas de forma integral y sistémica.</p>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-6 lg:col-span-1">
+                     <h4 class="font-bold text-xl mb-3 text-[#ff7c43]">Vigencia de Ausubel</h4>
+                    <p class="text-gray-600 mb-1 font-semibold">Esencial para la Calidad del Aprendizaje.</p>
+                    <p class="text-gray-600">Su valor reside en el diseño curricular, permitiendo estructurar el conocimiento de forma coherente para asegurar que el aprendizaje sea transferible y no una repetición superficial.</p>
+                </div>
+                
+                <div class="bg-[#003f5c] text-white rounded-xl shadow-2xl p-6 lg:col-span-3 lg:grid lg:grid-cols-3 lg:gap-6 items-center">
+                     <div class="lg:col-span-2">
+                        <h4 class="font-bold text-xl text-[#ffa600] mb-3">Respuesta al Incidente Crítico</h4>
+                        <p class="mb-4">En un contexto de alta segregación social, la <span class="font-bold">Teoría Histórico-Cultural de Vygotsky es la más pertinente</span>. Proporciona el marco ético y metodológico para respetar el contexto del niño y empoderar a los padres como mediadores, utilizando el lenguaje y el andamiaje dentro de la ZDP para el desarrollo potencial.</p>
+                    </div>
+                    <div class="text-center">
+                        <span class="text-6xl font-bold text-white">#1</span>
+                        <p class="font-semibold text-[#ffa600] mt-2">Enfoque Pertinente</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="conclusion" class="mt-12 bg-white rounded-xl shadow-lg p-8 text-center">
+            <h2 class="text-3xl font-bold text-[#003f5c] mb-4">Una Visión Complementaria</h2>
+            <p class="max-w-4xl mx-auto text-lg text-gray-600">
+                El aprendizaje óptimo surge de la sinergia de ambas teorías: la <span class="font-bold text-[#4d80a1]">mediación social</span> (Vygotsky) es la vía por la cual el material se presenta para que el estudiante pueda asimilarlo <span class="font-bold text-[#ff7c43]">significativamente</span> (Ausubel) con su estructura cognitiva. Una enseñanza efectiva requiere tanto la relevancia contextual como la coherencia interna del conocimiento.
+            </p>
+        </section>
+    </main>
+
+    <footer class="text-center p-6 mt-8 bg-gray-200 text-sm text-gray-600">
+        <p>Infografía generada con base en el Módulo 4: "Teorías histórico-cultural de Lev Vygotsky y de la asimilación de Ausubel".</p>
+        <p>Universidad Nacional Rosario Castellanos - Fundamentos Psicológicos del Aprendizaje.</p>
+    </footer>
+
+    <script>
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            }
+            return label;
+        };
+        
+        const wrapLabel = (label) => {
+            const maxLength = 16;
+            if (label.length <= maxLength) return label;
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + word).length > maxLength) {
+                    lines.push(currentLine.trim());
+                    currentLine = '';
+                }
+                currentLine += word + ' ';
+            });
+            lines.push(currentLine.trim());
+            return lines;
+        };
+
+        const colors = {
+            primary: '#003f5c',
+            secondary: '#4d80a1',
+            tertiary: '#8cb3c7',
+            accent1: '#ff7c43',
+            accent2: '#ffa600'
+        };
+
+        const zdpCtx = document.getElementById('zdpChart').getContext('2d');
+        new Chart(zdpCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Puede hacer solo (Nivel Real)', 'Puede hacer con ayuda (ZDP)', 'No puede hacer aún (Nivel Potencial)'],
+                datasets: [{
+                    label: 'Capacidad del Aprendiz',
+                    data: [25, 50, 25],
+                    backgroundColor: [colors.tertiary, colors.secondary, 'rgba(0, 63, 92, 0.1)'],
+                    borderColor: '#ffffff',
+                    borderWidth: 4,
+                    hoverOffset: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            padding: 15,
+                            font: {
+                                size: 12
+                            }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                },
+                cutout: '60%'
+            }
+        });
+        
+        const learningComparisonCtx = document.getElementById('learningComparisonChart').getContext('2d');
+        const rawLabels = ['Retención a Largo Plazo', 'Transferibilidad a Nuevos Contextos', 'Comprensión Profunda'];
+        const wrappedLabels = rawLabels.map(wrapLabel);
+
+        new Chart(learningComparisonCtx, {
+            type: 'bar',
+            data: {
+                labels: wrappedLabels,
+                datasets: [
+                    {
+                        label: 'Aprendizaje Significativo',
+                        data: [90, 85, 95],
+                        backgroundColor: colors.accent1,
+                        borderRadius: 5
+                    },
+                    {
+                        label: 'Aprendizaje Mecánico',
+                        data: [20, 15, 10],
+                        backgroundColor: colors.tertiary,
+                        borderRadius: 5
+                    }
+                ]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        max: 100,
+                         grid: {
+                            display: false
+                        }
+                    },
+                    y: {
+                         grid: {
+                            display: false
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    },
+                    tooltip: {
+                         callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
